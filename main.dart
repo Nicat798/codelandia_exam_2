@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'color_enum/colors_enum.dart';
 import 'model/user_model/admin_model.dart';
 import 'model/user_model/basic_user_model.dart';
 import 'model/vehicle_model/bus_model.dart';
@@ -11,19 +12,19 @@ List<BusModel> busCars = [
   BusModel(
     brand: "BusBrand",
     busType: "Big Bus",
-    color: "Red",
+    color: ColorsEnum.green,
     model: 'BusV10',
   ),
   BusModel(
     brand: "BusBrand2",
     busType: "Big Bus2",
-    color: "Grey",
+    color: ColorsEnum.white,
     model: 'BusV20',
   ),
   BusModel(
     brand: "BusBrand3",
     busType: "Big Bus3",
-    color: "Black",
+    color: ColorsEnum.blue,
     model: 'BusV30',
   ),
 ];
@@ -32,19 +33,19 @@ List<TruckModel> truckCars = [
   TruckModel(
     vehicleCount: "4",
     brand: 'TruckModel',
-    color: 'Blue',
+    color: ColorsEnum.red,
     model: 'Truckv10',
   ),
   TruckModel(
     vehicleCount: "4",
     brand: 'TruckModel',
-    color: 'Blue',
+    color: ColorsEnum.black,
     model: 'Truckv10',
   ),
   TruckModel(
       vehicleCount: "6",
       brand: 'TruckModel2',
-      color: 'White',
+      color: ColorsEnum.yellow,
       model: 'Truckv20'),
 ];
 
@@ -131,7 +132,18 @@ void userSide() {
   getAllCars();
 }
 
-void adminSide() {}
+void adminSide() {
+  print(
+      'Salam Admin. Nə Etmək lazımdır \n [1] - Maşın əlavə etmək \n [2] - Maşın Silmək');
+  String? adminSelectInput = stdin.readLineSync();
+
+  switch (adminSelectInput) {
+    case "1":
+      print("[1] - Avtobus \n[2] - Tır");
+
+    default:
+  }
+}
 
 void getAllCars() {
   print("Butun masinlar aşağıdaki siyahıdadır");
@@ -149,3 +161,7 @@ void getAllCars() {
         "${element.brand}, ${element.model}, ${element.vehicleCount}, ${element.color}");
   });
 }
+
+void addTransit() {}
+
+void addBus() {}

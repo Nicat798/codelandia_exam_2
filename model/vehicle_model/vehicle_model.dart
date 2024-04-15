@@ -1,7 +1,9 @@
+import '../../color_enum/colors_enum.dart';
+
 abstract class VehicleModel {
   String brand;
   String model;
-  String color;
+  ColorsEnum color;
 
   VehicleModel({
     required this.brand,

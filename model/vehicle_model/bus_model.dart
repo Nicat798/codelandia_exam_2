@@ -1,3 +1,4 @@
+import '../../color_enum/colors_enum.dart';
 import 'vehicle_model.dart';
 
 class BusModel implements VehicleModel {
@@ -7,7 +8,7 @@ class BusModel implements VehicleModel {
   String brand;
 
   @override
-  String color;
+  ColorsEnum color;
 
   @override
   String model;
